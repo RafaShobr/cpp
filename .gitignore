@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But accept directories
+!*/
+
+# But not these files...
+!*.h
+!*.cpp
+!*.sln
+!.gitignore
