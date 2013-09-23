@@ -18,6 +18,7 @@ public:
 	Node* RightMost();
 	Node* LeftMost();
 
+	friend std::ostream& operator<<(std::ostream&, const Node*);
 	friend std::ostream& operator<<(std::ostream&, const Node&);
 	
 };

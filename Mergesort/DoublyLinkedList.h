@@ -7,8 +7,11 @@ class DoublyLinkedList
 private:
 	Node *root;
 	Node *tail;
+	
 
 public:
+	int size;
+
 	DoublyLinkedList(void);
 	~DoublyLinkedList(void);
 	
@@ -17,7 +20,9 @@ public:
 
 	void InsertNodesLeft(Node*, Node*);
 	void InsertNodesRight(Node*, Node*);
+	int* ToArray();
 
+	friend std::ostream& operator<<(std::ostream&, const DoublyLinkedList*);
 	friend std::ostream& operator<<(std::ostream&, const DoublyLinkedList&);
 };
 

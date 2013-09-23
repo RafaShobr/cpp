@@ -16,15 +16,20 @@ Node::Node(void)
 }
 
 Node::~Node(){
-	if (this->right != NULL)
-		delete this->right;
+	
 	cout << "delete node" << this->value << endl;
 }
 
-std::ostream& operator<<(std::ostream& o, const Node& node) {
+std::ostream& operator<<(std::ostream& o, const Node *node) {
+	if (node->right != NULL)
+		return o << "[*" << node->value << "]" << node->right;
+	return o << "[*" << node->value << "]";
+}
+
+std::ostream& operator<<(std::ostream& o, const Node &node) {
 	if (node.right != NULL)
-		return o << "[" << node.value << "]" << *node.right;
-	return o << "[" << node.value << "]";
+		return o << "[&" << node.value << "]" << *(node.right);
+	return o << "[&" << node.value << "]";
 }
 
 Node* Node::LeftMost() {
